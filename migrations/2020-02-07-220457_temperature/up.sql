@@ -1,4 +1,4 @@
-CREATE TABLE temperature (
+CREATE TABLE temperatures (
   id SERIAL PRIMARY KEY,
   temperature FLOAT NOT NULL,
   device VARCHAR(64) NOT NULL,
