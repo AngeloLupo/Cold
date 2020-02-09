@@ -1,1 +1,1 @@
-DROP TABLE temperature;
+DROP TABLE temperatures;

@@ -1,5 +1,5 @@
 table! {
-    temperature (id) {
+    temperatures (id) {
         id -> Int4,
         temperature -> Float8,
         device -> Varchar,
