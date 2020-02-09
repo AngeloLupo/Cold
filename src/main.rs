@@ -17,7 +17,7 @@ use diesel::prelude::*;
 use diesel::pg::PgConnection;
 use dotenv::dotenv;
 use std::env;
-use self::models::NewTemperature;
+use self::models::{Temperatures, NewTemperature};
 
 pub fn establish_connection() -> PgConnection {
     dotenv().ok();
@@ -28,7 +28,7 @@ pub fn establish_connection() -> PgConnection {
         .expect(&format!("Error connecting to {}", database_url))
 }
 
-pub fn record_temperature<'a>(conn: &PgConnection, temperature: &'a f64, device: &'a str) {
+pub fn record_temperature<'a>(conn: &PgConnection, temperature: &'a f64, device: &'a str) -> Temperatures {
     use schema::temperatures;
 
     let new_temperature = NewTemperature{
